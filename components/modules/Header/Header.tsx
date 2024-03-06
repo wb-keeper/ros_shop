@@ -3,10 +3,9 @@ import { FC } from "react";
 import { useLang } from "@/hooks/useLang";
 import Logo from "@/components/elements/Logo/Logo";
 import Link from "next/link";
+import "../../../app/globalStyles/header.css";
 
-interface HeaderProps {}
-
-const Header: FC<HeaderProps> = () => {
+const Header = () => {
   const { lang, translations } = useLang();
   return (
     <header className="header">
@@ -32,7 +31,12 @@ const Header: FC<HeaderProps> = () => {
               href="/comparison"
             />
           </li>
-          <li className="header__links__item"></li>
+          <li className="header__links__item">
+            <Link
+              className="header__links__item__btn header__links__item__btn--cart"
+              href="/cart"
+            />
+          </li>
           <li className="header__links__item header__links__item--profile">
             <button className="btn-reset header__links__item__btn header__links__item__btn--profile" />
           </li>

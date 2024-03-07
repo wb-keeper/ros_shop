@@ -4,14 +4,17 @@ import { useLang } from "@/hooks/useLang";
 import Logo from "@/components/elements/Logo/Logo";
 import Link from "next/link";
 import "../../../app/globalStyles/header.css";
+import { Menu } from "@/components/modules/Header/Menu";
 
 const Header = () => {
   const { lang, translations } = useLang();
   return (
     <header className="header">
       <div className="container header__container">
-        <button className="btn-reset header__burger"></button>
-
+        <button className="btn-reset header__burger">
+          {translations[lang].header.menu_btn}
+        </button>
+        <Menu />
         <div className="header__logo">
           <Logo />
         </div>

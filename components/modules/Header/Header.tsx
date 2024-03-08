@@ -5,13 +5,19 @@ import Logo from "@/components/elements/Logo/Logo";
 import Link from "next/link";
 import "../../../app/globalStyles/header.css";
 import { Menu } from "@/components/modules/Header/Menu";
+import { openMenu } from "@/context/modals";
+import { addOverflowHiddenToBody } from "@/lib/utils/common";
 
 const Header = () => {
   const { lang, translations } = useLang();
+  const handleOpenMenu = () => {
+    addOverflowHiddenToBody();
+    openMenu();
+  };
   return (
     <header className="header">
       <div className="container header__container">
-        <button className="btn-reset header__burger">
+        <button className="btn-reset header__burger" onClick={handleOpenMenu}>
           {translations[lang].header.menu_btn}
         </button>
         <Menu />

@@ -7,6 +7,7 @@ import { setLang } from "@/context/lang";
 import { AllowedLangs } from "@/constants/lang";
 import Logo from "@/components/elements/Logo/Logo";
 import { AnimatePresence, motion } from "framer-motion";
+import Accordion from "@/components/modules/Accordion/Accordion";
 
 export const Menu = () => {
   const [showCatalogList, setShowCatalogList] = useState(false);
@@ -133,7 +134,14 @@ export const Menu = () => {
                       exit={{ opacity: 0 }}
                       className="list-reset nav-menu__accordion"
                     >
-                      <li className="nav-menu__accordion__item"></li>
+                      <li className="nav-menu__accordion__item">
+                        <Accordion
+                          title={translations[lang].main_menu.cloth}
+                          titleClass="btn-reset nav-menu__accordion__item__list"
+                        >
+                          <ul className="list-reset nav-menu__accordion__item__list"></ul>
+                        </Accordion>
+                      </li>
                     </motion.ul>
                   )}
                 </AnimatePresence>

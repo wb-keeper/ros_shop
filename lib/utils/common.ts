@@ -8,3 +8,9 @@ export const addOverflowHiddenToBody = (paddingRight = "") => {
   body.classList.add("overflow-hidden");
   paddingRight && (body.style.paddingRight = paddingRight);
 };
+export const getWindowWidth = () => {
+  const { innerWidth: windowWidth } =
+    typeof window !== "undefined" ? window : { innerWidth: 0 };
+
+  return { windowWidth };
+};

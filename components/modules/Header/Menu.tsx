@@ -11,6 +11,7 @@ import Accordion from "@/components/modules/Accordion/Accordion";
 import { usePathname } from "next/navigation";
 import { writeBuildId } from "next/dist/build/write-build-id";
 import MenuLinkItem from "@/components/modules/Header/MenuLinkItem";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 export const Menu = () => {
   const [showCatalogList, setShowCatalogList] = useState(false);
@@ -24,6 +25,8 @@ export const Menu = () => {
   };
   const pathname = usePathname();
 
+  const isMedia800 = useMediaQuery(800);
+  const isMedia450 = useMediaQuery(450);
   const handleShowCatalogList = () => {
     setShowCatalogList(true);
     setShowBuyersList(false);

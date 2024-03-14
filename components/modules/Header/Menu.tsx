@@ -133,7 +133,7 @@ export const Menu = () => {
         </div>
         <img
           className={`nav-menu__bg ${menuIsOpen ? "open" : ""}`}
-          src="/img/menu-bg.png"
+          src={`/img/menu-bg${isMedia800 ? "-small" : ""}.png`}
           alt="menu background"
         />
         <button

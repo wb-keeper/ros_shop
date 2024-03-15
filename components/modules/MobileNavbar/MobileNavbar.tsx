@@ -2,16 +2,20 @@
 import Link from "next/link";
 import { useLang } from "@/hooks/useLang";
 import { addOverflowHiddenToBody } from "@/lib/utils/common";
-
+import "../../../app/globalStyles/mobile-navbar.css";
+import { closeCatalogMenu, closeMenu, openCatalogMenu } from "@/context/modals";
 const MobileNavbar = () => {
   const { lang, translations } = useLang();
 
   const handleOpenMenu = () => {
     addOverflowHiddenToBody();
+    closeCatalogMenu();
   };
 
   const handleOpenCatalogMenu = () => {
     addOverflowHiddenToBody("0");
+    openCatalogMenu();
+    closeMenu();
   };
 
   return (

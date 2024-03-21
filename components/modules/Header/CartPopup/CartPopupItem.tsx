@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import DeleteCartItemBtn from "../../../../../../Download/rostelecom-shop-main/components/elements/DeleteCartItemBtn/DeleteCartItemBtn";
-import { useCartItemAction } from "../../../../../../Download/rostelecom-shop-main/hooks/useCartItemAction";
-import { formatPrice } from "../../../../../../Download/rostelecom-shop-main/lib/utils/common";
-import { ICartItem } from "../../../../../../Download/rostelecom-shop-main/types/cart";
-import ProductCounter from "../../../../../../Download/rostelecom-shop-main/components/modules/ProductsListItem/ProductCounter";
+import { useCartItemAction } from "@/hooks/useCartItemAction";
+import { formatPrice } from "@/lib/utils/common";
+import { ICartItem } from "@/types/cart";
+import ProductCounter from "../../ProductsListItem/ProductCounter";
+import DeleteItemBtn from "@/components/elements/DeleteCartItemBtn/DeleteCartItemBtn";
 
 const CartPopupItem = ({ item }: { item: ICartItem }) => {
   const {

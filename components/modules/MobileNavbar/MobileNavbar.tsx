@@ -4,6 +4,7 @@ import { useLang } from "@/hooks/useLang";
 import { addOverflowHiddenToBody } from "@/lib/utils/common";
 import "../../../app/globalStyles/mobile-navbar.css";
 import { closeCatalogMenu, closeMenu, openCatalogMenu } from "@/context/modals";
+import CatalogMenu from "@/components/modules/Header/CatalogMenu";
 const MobileNavbar = () => {
   const { lang, translations } = useLang();
 
@@ -20,6 +21,7 @@ const MobileNavbar = () => {
 
   return (
     <>
+      <CatalogMenu />
       <div className="mobile-navbar">
         <Link href="/" className="mobile-navbar__btn">
           {translations[lang].breadcrumbs.main}

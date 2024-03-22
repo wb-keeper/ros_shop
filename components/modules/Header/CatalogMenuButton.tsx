@@ -1,5 +1,8 @@
-import { ICatalogMenuButtonProps } from "../../../../../Download/rostelecom-shop-main/types/modules";
-
+interface ICatalogMenuButtonProps {
+  name: string;
+  isActive: boolean;
+  handler: VoidFunction;
+}
 const CatalogMenuButton = ({
   name,
   isActive,

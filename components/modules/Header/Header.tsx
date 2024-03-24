@@ -1,18 +1,24 @@
 "use client";
-import { FC } from "react";
+import { FC, useState } from "react";
 import { useLang } from "@/hooks/useLang";
 import Logo from "@/components/elements/Logo/Logo";
 import Link from "next/link";
 import "../../../app/globalStyles/header.css";
 import { Menu } from "@/components/modules/Header/Menu";
-import { openMenu } from "@/context/modals";
+import { $searchModal, openMenu, openSearchModal } from "@/context/modals";
 import { addOverflowHiddenToBody } from "@/lib/utils/common";
+import { useStore } from "effector-react";
 
 const Header = () => {
   const { lang, translations } = useLang();
+  const searchModal = useStore($searchModal);
   const handleOpenMenu = () => {
     addOverflowHiddenToBody();
     openMenu();
+  };
+  const handleOpenSearchModal = () => {
+    openSearchModal();
+    addOverflowHiddenToBody();
   };
   return (
     <header className="header">
@@ -26,7 +32,10 @@ const Header = () => {
         </div>
         <ul className="header__links list-reset">
           <li className="header__links__item">
-            <button className="btn-reset header__links__item__btn header__links__item__btn--search" />
+            <button
+              className="btn-reset header__links__item__btn header__links__item__btn--search"
+              onClick={handleOpenSearchModal}
+            />
           </li>
           <li className="header__links__item">
             <Link

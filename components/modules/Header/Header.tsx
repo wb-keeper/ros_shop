@@ -10,11 +10,11 @@ import {
   addOverflowHiddenToBody,
   handleCloseSearchModal,
 } from "@/lib/utils/common";
-import { useStore } from "effector-react";
+import { useUnit } from "effector-react";
 
 const Header = () => {
   const { lang, translations } = useLang();
-  const searchModal = useStore($searchModal);
+  const searchModal = useUnit($searchModal);
   const handleOpenMenu = () => {
     addOverflowHiddenToBody();
     openMenu();

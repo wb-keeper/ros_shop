@@ -5,9 +5,12 @@ import { useMediaQuery } from "@/hooks/useMediaQuery";
 import MobileNavbar from "@/components/modules/MobileNavbar/MobileNavbar";
 import { AnimatePresence, motion } from "framer-motion";
 import SearchModal from "@/components/modules/Header/SearchModal";
+import { useUnit } from "effector-react";
+import { $searchModal } from "@/context/modals";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const isMedia800 = useMediaQuery(800);
+  const searchModal = useUnit($searchModal);
   return (
     <>
       <Header />

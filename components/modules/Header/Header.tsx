@@ -6,10 +6,7 @@ import Link from "next/link";
 import "../../../app/globalStyles/header.css";
 import { Menu } from "@/components/modules/Header/Menu";
 import { $searchModal, openMenu, openSearchModal } from "@/context/modals";
-import {
-  addOverflowHiddenToBody,
-  handleCloseSearchModal,
-} from "@/lib/utils/common";
+import { addOverflowHiddenToBody } from "@/lib/utils/common";
 import { useUnit } from "effector-react";
 
 const Header = () => {
@@ -25,10 +22,6 @@ const Header = () => {
   };
   return (
     <header className="header">
-      <div
-        className={`header__search-overlay ${searchModal ? "overlay-active" : ""}`}
-        onClick={handleCloseSearchModal}
-      ></div>
       <div className="container header__container">
         <button className="btn-reset header__burger" onClick={handleOpenMenu}>
           {translations[lang].header.menu_btn}

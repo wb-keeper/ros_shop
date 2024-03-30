@@ -7,7 +7,11 @@ import {
   useRef,
   useState,
 } from "react";
-import { IWrappedComponentProps } from "@/types/hocs";
+
+export interface IWrappedComponentProps {
+  open: boolean;
+  setOpen: (arg0: boolean) => void;
+}
 
 export function withClickOutside(
   WrappedComponent: ForwardRefExoticComponent<

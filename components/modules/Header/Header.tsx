@@ -8,6 +8,7 @@ import { Menu } from "@/components/modules/Header/Menu";
 import { $searchModal, openMenu, openSearchModal } from "@/context/modals";
 import { addOverflowHiddenToBody } from "@/lib/utils/common";
 import { useUnit } from "effector-react";
+import CartPopup from "@/components/modules/Header/CartPopup/CartPopup";
 
 const Header = () => {
   const { lang, translations } = useLang();
@@ -50,10 +51,7 @@ const Header = () => {
             />
           </li>
           <li className="header__links__item">
-            <Link
-              className="header__links__item__btn header__links__item__btn--cart"
-              href="/cart"
-            />
+            <CartPopup />
           </li>
           <li className="header__links__item header__links__item--profile">
             <button className="btn-reset header__links__item__btn header__links__item__btn--profile" />

@@ -5,6 +5,7 @@ import "./globalStyles/menu.css";
 import "./globalStyles/search-modal.css";
 import "./globalStyles/catalog-menu.css";
 import "./globalStyles/cart-popup.css";
+import "./globalStyles/footer.css";
 import "bootstrap/dist/css/bootstrap.css";
 import Layout from "@/components/layouts/Layout";
 
